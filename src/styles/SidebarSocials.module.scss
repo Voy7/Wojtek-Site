@@ -1,0 +1,31 @@
+// Sidebar socials component
+.sidebarSocials {
+  position: fixed;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.2rem;
+  background: var(--bg-color-1);
+  border: 1px solid var(--border-color-1);
+  border-radius: 0.25rem;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: rgb(200, 200, 200);
+    background: rgb(20, 20, 20);
+    border: 1px solid transparent;
+    border-radius: 50%;
+    scale: 0.9;
+    transition: all 150ms ease-in-out;
+
+    &:hover { fill: white; border-color: rgb(127, 127, 255); scale: 1; }
+  }
+
+  // Looks akward in mobile view, so hide it
+  @media (max-width: 768px) { display: none; }
+}

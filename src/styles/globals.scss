@@ -1,0 +1,45 @@
+:root {
+  --text-color-1: rgb(255, 255, 255);
+  --text-color-2: rgb(200, 200, 200);
+  --text-color-3: rgb(150, 150, 150);
+  --bg-color-1: rgb(20, 20, 30);
+  --bg-color-2: rgb(50, 50, 55);
+  --bg-color-3: rgb(70, 70, 80);
+  --border-color-1: rgb(40, 40, 50);
+  --border-color-2: rgb(60, 60, 70);
+  --border-color-3: rgb(80, 80, 90);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: var(--text-color-1);
+  background: rgb(15, 15, 20);
+  background: linear-gradient(90deg,
+    rgba(10, 10, 15, 1) 0%,
+    rgba(22, 22, 30, 1) 50%,
+    rgba(10, 10, 15, 1) 100%
+  );
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 4rem;
+  padding-top: 60px; // Rough header height
+  overflow-x: hidden;
+}
+
+// Thin, dark scrollbars on all browsers
+::-webkit-scrollbar { width: 8px; height: 8px; background: var(--bg-color-1); }
+::-webkit-scrollbar-thumb { background: var(--bg-color-2); }
+::-webkit-scrollbar-thumb:hover { background: var(--bg-color-3); }
+::-webkit-scrollbar-track { background: var(--bg-color-1); }
+* { scrollbar-color: var(--bg-color-2) var(--bg-color-1); scrollbar-width: thin; }

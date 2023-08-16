@@ -1,0 +1,62 @@
+// Main project container
+.project {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 800px;
+  // background: blue;
+
+  &.swapped {
+    flex-direction: row-reverse;
+  }
+
+  .left {
+    max-width: 500px;
+    padding: 1rem;
+    background: var(--bg-color-1);
+    border: 1px solid var(--border-color-1);
+    border-radius: 1rem;
+  }
+}
+
+// Project tags component
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  .tag {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.95rem;
+    color: var(--text-color-1);
+  }
+}
+
+// Project image gallery component
+.projectImages {
+  flex: 1;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  // background: red;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    max-width: 100%;
+    border: 1px solid var(--border-color-1);
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}
