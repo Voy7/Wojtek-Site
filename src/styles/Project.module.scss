@@ -1,23 +1,52 @@
 // Main project container
 .project {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
   gap: 2rem;
-  max-width: 800px;
-  // background: blue;
+  
+  .content { // Card & images container
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 2rem 0;
+  
+    &.swapped { flex-direction: row-reverse; }
+  
+    .left {
+      max-width: 500px;
+      padding: 1rem;
+      background: var(--bg-color-1);
+      border: 1px solid var(--border-color-1);
+      border-radius: 1rem;
 
-  &.swapped {
-    flex-direction: row-reverse;
-  }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
 
-  .left {
-    max-width: 500px;
-    padding: 1rem;
-    background: var(--bg-color-1);
-    border: 1px solid var(--border-color-1);
-    border-radius: 1rem;
+        h2 { margin: 0; font-size: 1.5rem; color: var(--text-color-1); }
+        
+        .links {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          
+          a {
+            color: var(--text-color-3);
+            fill: var(--text-color-3);
+
+            &:hover { color: var(--text-color-1); fill: var(--text-color-1); }
+
+            svg { height: 1rem; }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -40,7 +69,7 @@
 .projectImages {
   flex: 1;
   width: 300px;
-  height: 300px;
+  height: 150px; // Needed or else breaks on vertical view
   position: relative;
   // background: red;
 
@@ -59,4 +88,33 @@
       opacity: 1;
     }
   }
+}
+
+// Project lines
+.projectLineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .bubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    color: var(--bg-color-3);
+    background: var(--text-color-3);
+    border-radius: 50%;
+    cursor: default;
+  }
+
+  .line, .lineInvisible {
+    width: 3px;
+    height: 100%;
+    background: var(--text-color-3);
+  }
+
+  .lineInvisible { opacity: 0; }
 }

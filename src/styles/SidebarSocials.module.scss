@@ -16,6 +16,7 @@
   svg {
     width: 2rem;
     height: 2rem;
+    color: rgb(200, 200, 200);
     fill: rgb(200, 200, 200);
     background: rgb(20, 20, 20);
     border: 1px solid transparent;
@@ -23,7 +24,7 @@
     scale: 0.9;
     transition: all 150ms ease-in-out;
 
-    &:hover { fill: white; border-color: rgb(127, 127, 255); scale: 1; }
+    &:hover { color: white; fill: white; border-color: rgb(127, 127, 255); scale: 1; }
   }
 
   // Looks akward in mobile view, so hide it

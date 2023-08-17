@@ -2,15 +2,14 @@
 
 import { useRef, useState, useEffect } from 'react'
 import { useFrame, Canvas } from '@react-three/fiber'
+import useScrollY from '@/hooks/useScrollY'
 
 // 3D background canvas component
 export default function Canvas3D() {
   const [loaded, setLoaded] = useState<boolean>(false)
+  const scrollY = useScrollY()
 
-  const STARS_COUNT = 250
-  const MAX_X = 8
-  const MAX_Y = 12
-  const MAX_Z = 2
+  const STARS_COUNT = 300
 
   const styles = {
     position: 'fixed',
@@ -19,7 +18,12 @@ export default function Canvas3D() {
     width: '100vw',
     height: '100vh',
     zIndex: -1,
-    transition: '0.5s ease-in-out'
+    transition: '0.5s ease-in-out',
+    background: `linear-gradient(90deg,
+      rgba(20, 20, 30, ${scrollY}) 0%,
+      rgba(40, 40, 60, ${scrollY - 0.25}) 50%,
+      rgba(20, 20, 30, ${scrollY}) 100%
+    )`
   } as const
 
   return (
@@ -32,11 +36,7 @@ export default function Canvas3D() {
       { [...Array(STARS_COUNT)].map((_, i) => (
         <StarMesh
           key={i}
-          position={[
-            Math.random() * MAX_X * (Math.random() < 0.5 ? -1 : 1),
-            Math.random() * MAX_Y * (Math.random() < 0.5 ? -1 : 1),
-            Math.random() * MAX_Z
-          ]}
+          scrollY={scrollY}
         />
       )) }
     </Canvas>
@@ -44,24 +44,21 @@ export default function Canvas3D() {
 }
 
 // 3D star mesh component
-function StarMesh({ position }: { position: [number, number, number] }) {
+function StarMesh({ scrollY }: { scrollY: number }) {
   const ref = useRef<any>(null)
-  const [scrollY, setScrollY] = useState<number>(0)
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  const MAX_X = 8
+  const MAX_Y = 12
+  const MAX_Z = 2
+
+  const [position] = useState<[number, number, number]>([
+    Math.random() * MAX_X * (Math.random() < 0.5 ? -1 : 1),
+    Math.random() * MAX_Y * (Math.random() < 0.5 ? -1 : 1),
+    Math.random() * MAX_Z
+  ])
 
   useFrame((state, delta) => {
-    const y = scrollY / (document.body.scrollHeight - window.innerHeight)
-
-    ref.current.rotation.x += y * 0.1
-    ref.current.rotation.y += y * 0.1
-    ref.current.rotation.z += y * 0.1
-
-    ref.current.position.y = position[1] + y * 2
+    ref.current.position.y = position[1] + scrollY * 3
   })
   
   return (
@@ -70,10 +67,12 @@ function StarMesh({ position }: { position: [number, number, number] }) {
       position={position}
       scale={0.05}
     >
-      <sphereGeometry args={[0.5, 32, 32]} />
+      <boxGeometry />
       <meshStandardMaterial
-        // wireframe={true}
         color={"white"}
+        metalness={0.5}
+        roughness={0.5}
+        // wireframe={true}
       />
     </mesh>
   )

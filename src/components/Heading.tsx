@@ -3,9 +3,10 @@
 import { useInView } from 'react-intersection-observer'
 import styles from '@/styles/Heading.module.scss'
 
+// Be able to pass in all default props for h1
 type Props = {
-  children: React.ReactNode,
-  props?: React.HTMLAttributes<HTMLHeadingElement>
+  children?: React.ReactNode,
+  id?: string
 }
 
 // Heading text component

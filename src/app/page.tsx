@@ -4,7 +4,7 @@ import SidebarSocials from '@/components/SidebarSocials'
 import Canvas from '@/components/3DCanvas'
 import Heading from '@/components/Heading'
 import Project from '@/components/Project'
-import Icon from '@/components/Icon'
+import ContactCard from '@/components/ContactCard'
 import styles from '@/styles/Home.module.scss'
 
 export default function Home() {
@@ -23,44 +23,58 @@ export default function Home() {
           </p>
           <hr />
         </section>
-        <Heading>Projects</Heading>
-        <section id="projects" className={styles.projects}>
+        <Heading id="projects">Projects</Heading>
+        <section className={styles.projects}>
           <Project
-            name="Project 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nisl nisl ultricies nisl, nec aliquam nisl nisl nec."
+            name="codcsclub.com"
+            description="codcsclub.com is the official website for the College of Dupage Computer Science Club. It provides an introduction about the club to new members and partners. The site also provides a place to catalog all of our projects and contributing team members."
             tags={['React', 'JavaScript', 'HTML', 'Sass', 'Next.js', 'Node.js']}
             images={['codcsclub-1.png', 'codcsclub-2.png', 'codcsclub-3.png', 'codcsclub-4.png']}
+            linePos="down" lineContent="1"
+            githubURL="https://github.com/cod-cs-club/codcsclub"
+            visitURL="https://codcsclub.com"
           />
           <Project
-            name="Project 2"
+            name="VPAC-Suite"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nisl nisl ultricies nisl, nec aliquam nisl nisl nec."
-            tags={['React', 'TypeScript', 'HTML']}
-            images={['codcsclub-1.png', 'codcsclub-2.png', 'codcsclub-3.png', 'codcsclub-4.png']}
+            tags={['EJS', 'JavaScript', 'HTML', 'CSS', 'Express.js', 'Lua']}
+            images={['vpac-1.png', 'vpac-2.png', 'vpac-3.png', 'vpac-4.png']}
+            linePos="up-down" lineContent="2"
+            githubURL="https://github.com/Voy7/VPAC-Suite"
             isSwapped
           />
           <Project
-            name="Project 3"
+            name="N.D.Q.E"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nisl nisl ultricies nisl, nec aliquam nisl nisl nec."
-            tags={['React', 'TypeScript', 'HTML']}
-            images={['codcsclub-1.png', 'codcsclub-2.png', 'codcsclub-3.png', 'codcsclub-4.png']}
+            tags={['React', 'TypeScript', 'HTML', 'Sass', 'Next.js', 'Node.js']}
+            images={['ndqe-1.png', 'ndqe-2.png', 'ndqe-3.png']}
+            linePos="up-down" lineContent="3"
           />
           <Project
             name="Project 4"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam ultricies, nisl nisl ultricies nisl, nec aliquam nisl nisl nec."
             tags={['React', 'TypeScript', 'HTML']}
             images={['codcsclub-1.png', 'codcsclub-2.png', 'codcsclub-3.png', 'codcsclub-4.png']}
+            linePos="up" lineContent="4"
             isSwapped
           />
         </section>
-        <section id="contact" className={styles.contact}>
-          <Heading>Contact</Heading>
+        <section className={styles.contact}>
+          <Heading id="contact">Contact</Heading>
           <p className="info">Interested in working with me? Send an email or leave a voice message!</p>
           <div className={styles.cards}>
-            <div className={styles.card}>
-              <Icon name="mail" />
-              <p>wkulak3@gmail.com</p>
-              <a href="mailto:wkulak3@gmail.com">Send Email</a>
-            </div>
+            <ContactCard
+              icon="mail"
+              descriptionText={<>Email me:<br />wkulak3@gmail.com</>}
+              buttonText="Send Email"
+              href="mailto:wkulak3@gmail.com"
+            />
+            <ContactCard
+              icon="linkedin-alt"
+              descriptionText={<>Message me on<br />LinkedIn</>}
+              buttonText="Open LinkedIn"
+              href="https://www.linkedin.com/in/wojtek-kulak/"
+            />
           </div>
         </section>
       </main>
