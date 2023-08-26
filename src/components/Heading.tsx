@@ -1,7 +1,7 @@
 'use client'
 
 import { useInView } from 'react-intersection-observer'
-import styles from '@/styles/Heading.module.scss'
+import styles from '@/components/Heading.module.scss'
 
 // Be able to pass in all default props for h1
 type Props = {

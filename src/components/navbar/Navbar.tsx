@@ -1,16 +1,16 @@
 import Image from 'next/image'
-import HeaderNavbar from '@/components/HeaderNavbar'
-import styles from '@/styles/Header.module.scss'
+import NavbarLinks from '@/components/navbar/NavbarLinks'
+import styles from '@/components/navbar/Navbar.module.scss'
 
-// Main header component
+// Main navbar header component
 export default function Navbar() {
   return (
-    <header id="header" className={styles.header}>
+    <header id="navbar" className={styles.navbar}>
       <div id={styles.left}>
         <Image src="/avatar.png" alt="logo" width={30} height={30} />
         <span>Wojtek Kulak</span>
       </div>
-      <HeaderNavbar />
+      <NavbarLinks />
     </header>
   )
 }

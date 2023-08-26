@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import styles from '@/styles/Project.module.scss'
+import styles from '@/components/project/Project.module.scss'
 
-const projectTags  = [
+export const projectTags  = [
   { name: 'React', image: 'react.png' },
   { name: 'TypeScript', image: 'typescript.png' },
   { name: 'JavaScript', image: 'javascript.png' },

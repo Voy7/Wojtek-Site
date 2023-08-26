@@ -1,10 +1,14 @@
+@import '@/styles/base';
+
+// Heading component
 .heading {
   position: relative;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem 1rem;
   font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-color-1);
+  font-weight: 700;
+  color: black;
+  background: $theme-color-2;
 
   &::after {
     content: '';
@@ -17,9 +21,9 @@
     animation: overlay 1s ease-in-out infinite;
     
     @keyframes overlay {
-      0% { background: rgb(127, 127, 127); }
+      0% { background: $theme-color-1; }
       50% { background: rgb(200, 200, 200); }
-      100% { background: rgb(127, 127, 127); }
+      100% { background: $theme-color-1; }
     }
   }
 

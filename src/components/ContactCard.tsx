@@ -1,5 +1,5 @@
 import Icon, { IconNames } from '@/components/Icon'
-import styles from '@/styles/ContactCard.module.scss'
+import styles from '@/components/ContactCard.module.scss'
 
 type Props = {
   icon: IconNames,

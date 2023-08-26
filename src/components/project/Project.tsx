@@ -3,11 +3,11 @@
 import { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import ProjectTags, { ProjectTagNames } from '@/components/ProjectTags'
-import ProjectImages from '@/components/ProjectImages'
-import ProjectLine, { ProjectLinePos } from '@/components/ProjectLine'
+import ProjectTags, { ProjectTagNames } from '@/components/project/ProjectTags'
+import ProjectImages from '@/components/project/ProjectImages'
+import ProjectLine, { ProjectLinePos } from '@/components/project/ProjectLine'
 import Icon from '@/components/Icon'
-import styles from '@/styles/Project.module.scss'
+import styles from '@/components/project/Project.module.scss'
 
 type Props = {
   name: string,

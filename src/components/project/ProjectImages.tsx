@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect } from 'react'
-import styles from '@/styles/Project.module.scss'
+import styles from '@/components/project/Project.module.scss'
 
 type Props = {
   // images: React.ReactNode[]

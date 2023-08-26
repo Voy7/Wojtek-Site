@@ -1,16 +1,17 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import styles from '@/styles/Header.module.scss'
+import styles from '@/components/navbar/Navbar.module.scss'
 
 const sections = [
   { name: 'About Me', id: 'about' },
   { name: 'Projects', id: 'projects' },
+  { name: 'Skills', id: 'skills' },
   { name: 'Contact', id: 'contact' }
 ] as const
 
-// Navbar for header component
-export default function HeaderNavbar() {
+// Links for navbar component
+export default function NavbarLinks() {
   const [section, setSection] = useState<string>('about')
 
   function moveToSection(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -19,15 +20,16 @@ export default function HeaderNavbar() {
     const element = document.querySelector(`#${id}`) as HTMLElement | null
     if (!element) return
 
-    const headerHeight = (document.querySelector('#header') as HTMLElement).offsetHeight
+    const headerHeight = (document.querySelector('#navbar') as HTMLElement).offsetHeight
 
     window.scrollTo({ top: element.offsetTop - headerHeight - 10, behavior: 'smooth' })
   }
 
-  // Change active section based on which section is closest to the middle of the screen
+  // Change active section based on which section is closest to the top of the viewport
   useEffect(() => {
     function handleScroll() {
-      const scrollPosition = window.scrollY + window.innerHeight / 2
+      const scrollPosition = window.scrollY + 150
+      console.log(scrollPosition)
 
       for (const section of sections) {
         const element = document.querySelector(`#${section.id}`) as HTMLElement | null
@@ -36,7 +38,7 @@ export default function HeaderNavbar() {
         const elementTop = element.offsetTop
         const elementBottom = elementTop + element.offsetHeight
 
-        if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+        if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
           setSection(section.id)
           break
         }
@@ -67,7 +69,7 @@ export default function HeaderNavbar() {
   }, [section])
 
   return (
-    <nav id={styles.navbar}>
+    <nav id={styles.navbarLinks}>
       <div id="underline" className={styles.underline}></div>
       { sections.map(sec => {
         return (

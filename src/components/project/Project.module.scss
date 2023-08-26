@@ -1,3 +1,5 @@
+@import '@/styles/base';
+
 // Main project container
 .project {
   display: flex;
@@ -19,8 +21,8 @@
     .left {
       max-width: 500px;
       padding: 1rem;
-      background: var(--bg-color-1);
-      border: 1px solid var(--border-color-1);
+      background: $bg-color-2;
+      border: 1px solid $border-color-2;
       border-radius: 1rem;
 
       header {
@@ -104,8 +106,8 @@
     width: 2rem;
     height: 2rem;
     font-size: 1rem;
-    color: var(--bg-color-3);
-    background: var(--text-color-3);
+    color: $bg-color-3;
+    background: $text-color-1;
     border-radius: 50%;
     cursor: default;
   }
@@ -113,7 +115,7 @@
   .line, .lineInvisible {
     width: 3px;
     height: 100%;
-    background: var(--text-color-3);
+    background: $text-color-2;
   }
 
   .lineInvisible { opacity: 0; }

@@ -1,3 +1,5 @@
+@import '@/styles/base';
+
 // Sidebar socials component
 .sidebarSocials {
   position: fixed;
@@ -9,8 +11,8 @@
   flex-direction: column;
   gap: 0.2rem;
   padding: 0.2rem;
-  background: var(--bg-color-1);
-  border: 1px solid var(--border-color-1);
+  background: $bg-color-1;
+  border: 2px solid $border-color-1;
   border-radius: 0.25rem;
 
   svg {

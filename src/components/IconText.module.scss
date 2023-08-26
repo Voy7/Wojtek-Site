@@ -1,0 +1,14 @@
+@import '@/styles/base';
+
+// Icon-text component
+.iconText {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  color: var(--text-color-2);
+  font-size: 1rem;
+  cursor: default;
+
+  svg { width: 20px; color: $text-color-3; }
+}

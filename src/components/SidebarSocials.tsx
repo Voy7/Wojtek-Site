@@ -1,5 +1,5 @@
 import Icon from '@/components/Icon'
-import styles from '@/styles/SidebarSocials.module.scss'
+import styles from '@/components/SidebarSocials.module.scss'
 
 // Sidebar socials component
 export default function SidebarSocials() {

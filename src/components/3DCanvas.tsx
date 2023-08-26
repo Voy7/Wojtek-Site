@@ -19,11 +19,11 @@ export default function Canvas3D() {
     height: '100vh',
     zIndex: -1,
     transition: '0.5s ease-in-out',
-    background: `linear-gradient(90deg,
-      rgba(20, 20, 30, ${scrollY}) 0%,
-      rgba(40, 40, 60, ${scrollY - 0.25}) 50%,
-      rgba(20, 20, 30, ${scrollY}) 100%
-    )`
+    // background: `linear-gradient(90deg,
+    //   rgba(20, 20, 30, 0.2) 0%,
+    //   rgba(40, 40, 60, 0.25) 50%,
+    //   rgba(20, 20, 30, 0.2) 100%
+    // )`
   } as const
 
   return (
