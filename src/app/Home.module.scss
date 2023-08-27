@@ -35,9 +35,11 @@
   }
 
   p.bio {
-    margin: 0;
+    margin: 0 1rem;
     font-size: 1rem;
     color: $text-color-2;
+
+    span { color: $theme-color-1; }
 
     @include lg { flex: 1; font-size: 1.15rem; }
   }

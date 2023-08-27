@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
-import { useFrame, Canvas } from '@react-three/fiber'
+import { useFrame, useThree, Canvas } from '@react-three/fiber'
 import useScrollY from '@/hooks/useScrollY'
 
 // 3D background canvas component
@@ -31,8 +31,9 @@ export default function Canvas3D() {
       style={loaded ? styles : { ...styles, opacity: 0 }}
       onCreated={() => setLoaded(true)}
     >
+      <Camera />
       <pointLight position={[10, 10, 10]} />
-      <ambientLight intensity={0.3} />
+      <ambientLight intensity={0.75} />
       { [...Array(STARS_COUNT)].map((_, i) => (
         <StarMesh
           key={i}
@@ -43,12 +44,30 @@ export default function Canvas3D() {
   )
 }
 
+// Camera component
+function Camera() {
+  // Orbit the camera around the center of the scene
+  const { camera } = useThree()
+
+  useEffect(() => {
+    camera.position.set(0, 0, 10)
+  }, [])
+
+  useFrame((state, delta) => {
+    camera.position.x = Math.sin(state.clock.elapsedTime / 2) * 7
+    camera.position.y = Math.sin(state.clock.elapsedTime / 2) * 7
+    camera.lookAt(0, 0, 0)
+  })
+
+  return null
+}
+
 // 3D star mesh component
 function StarMesh({ scrollY }: { scrollY: number }) {
   const ref = useRef<any>(null)
 
-  const MAX_X = 8
-  const MAX_Y = 12
+  const MAX_X = 22
+  const MAX_Y = 15
   const MAX_Z = 2
 
   const [position] = useState<[number, number, number]>([

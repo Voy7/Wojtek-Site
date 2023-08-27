@@ -4,6 +4,7 @@ import SidebarSocials from '@/components/SidebarSocials'
 import Canvas from '@/components/3DCanvas'
 import Heading from '@/components/Heading'
 import Project from '@/components/project/Project'
+import ItemsList from '@/components/ItemsList'
 import IconText from '@/components/IconText'
 import ContactCard from '@/components/ContactCard'
 import styles from '@/app/Home.module.scss'
@@ -22,7 +23,7 @@ export default function Home() {
             <Heading>FULL-STACK DEVELOPER</Heading>
           </div>
           <p className={styles.bio}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolor quas totam consequuntur, quasi numquam amet soluta praesentium minus perferendis voluptate deserunt commodi itaque eius omnis, suscipit incidunt cum aut ratione non, corrupti dolores voluptatem ducimus at? Aliquid ab quam aliquam, obcaecati harum nobis itaque dolore, sit soluta libero corrupti in vero consectetur deleniti voluptates numquam incidunt cum similique consequatur!
+            Passionate for both <span>front-end & back-end</span> development. I love to learn new technologies and create the best possible user experience for all my <span>websites & web apps</span>.
           </p>
         </section>
         <section id="projects" className={styles.projects}>
@@ -63,7 +64,7 @@ export default function Home() {
         </section>
         <section className={styles.skills}>
           <Heading id="skills">MY SKILLS</Heading>
-          <div className={styles.columns}>
+          <ItemsList className={styles.columns}>
             <section>
               <h2>LANGUAGES</h2>
               <div className={styles.list}>
@@ -95,7 +96,7 @@ export default function Home() {
                 <IconText icon="arrow-right" text="Git" />
               </div>
             </section>
-          </div>
+          </ItemsList>
         </section>
         <section className={styles.contact}>
           <Heading id="contact">CONTACT ME</Heading>
