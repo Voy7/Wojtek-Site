@@ -1,4 +1,5 @@
 @import '@/styles/base';
+@import '@/styles/tooltips';
 
 body {
   margin: 0;
@@ -27,71 +28,3 @@ main {
 ::-webkit-scrollbar-thumb:hover { background: $bg-color-3; }
 ::-webkit-scrollbar-track { background: $bg-color-1; }
 * { scrollbar-color: $bg-color-2 $bg-color-1; scrollbar-width: thin; }
-
-// Tooltips
-[data-tooltip],
-[data-tooltip-top],
-[data-tooltip-bottom],
-[data-tooltip-left],
-[data-tooltip-right] {
-  position: relative;
-
-  // Tooltip content
-  &::after {
-    position: absolute;
-    display: none;
-    padding: 8px;
-    white-space: nowrap;
-    font-size: 14px;
-    color: white;
-    background: black;
-    border-radius: 5px;
-    opacity: 0;
-    animation: tooltip-popup 150ms ease-in-out forwards;
-    z-index: 999;
-  }
-
-  &:hover::after { display: block; }
-
-  // Tooltip arrow
-  &::before {
-    position: absolute;
-    display: none;
-    background: black;
-    width: 10px;
-    height: 10px;
-    opacity: 0;
-    animation: tooltip-popup 150ms ease-in-out forwards;
-    animation-delay: 500ms;
-    z-index: 999;
-    content: '';
-  }
-
-  &:hover::before { display: block; }
-
-  @keyframes tooltip-popup {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-}
-
-[data-tooltip] {
-  &::after { top: 0; left: 50%; translate: -50% calc(-100% - 10px); content: attr(data-tooltip); }
-  &::before { top: 0; left: 50%; translate: -50% calc(-100% - 5px); rotate: 45deg; }
-}
-[data-tooltip-top] {
-  &::after { top: 0; left: 50%; translate: -50% calc(-100% - 10px); content: attr(data-tooltip-top); }
-  &::before { top: 0; left: 50%; translate: -50% calc(-100% - 5px); rotate: 45deg; }
-}
-[data-tooltip-bottom] {
-  &::after { bottom: 0; left: 50%; translate: -50% calc(100% + 10px); content: attr(data-tooltip-bottom); }
-  &::before { bottom: 0; left: 50%; translate: -50% calc(100% + 5px); rotate: 45deg; }
-}
-[data-tooltip-left] {
-  &::after { top: 0; left: 0; translate: calc(-100% - 10px) 0; content: attr(data-tooltip-left); }
-  &::before { top: 50%; left: 0; translate: calc(-100% - 5px) -50%; rotate: 45deg; }
-}
-[data-tooltip-right] {
-  &::after { top: 0; right: 0; translate: calc(100% + 10px) 0; content: attr(data-tooltip-right); }
-  &::before { top: 50%; right: 0; translate: calc(100% + 5px) -50%; rotate: 45deg; }
-}

@@ -11,9 +11,10 @@ export const projectTags  = [
   { name: 'EJS', image: 'ejs.png' },
   { name: 'Next.js', image: 'nextjs.png' },
   { name: 'Node.js', image: 'node.png' },
-  { name: 'Express.js', image: 'node.png' },
+  { name: 'Express.js', image: 'express.png' },
   { name: 'Python', image: 'python.png' },
   { name: 'Lua', image: 'lua.png' },
+  { name: 'Prisma', image: 'prisma.png' }
 ] as const
 
 export type ProjectTagNames = typeof projectTags[number]['name'][]

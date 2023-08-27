@@ -9,6 +9,7 @@
   font-weight: 700;
   color: black;
   background: $theme-color-2;
+  cursor: default;
 
   &::after {
     content: '';

@@ -83,6 +83,7 @@ export default function Home() {
                 <IconText tag="Express.js" />
                 <IconText tag="Sass" />
                 <IconText tag="EJS" />
+                <IconText tag="Prisma" />
               </div>
             </section>
             <section>
@@ -97,8 +98,8 @@ export default function Home() {
           </div>
         </section>
         <section className={styles.contact}>
-          <Heading id="contact">Contact</Heading>
-          <p className="info">Interested in working with me? Send an email or leave a voice message!</p>
+          <Heading id="contact">CONTACT ME</Heading>
+          <p className="info">Interested in working with me? Send an email or leave a message!</p>
           <div className={styles.cards}>
             <ContactCard
               icon="mail"
@@ -110,7 +111,7 @@ export default function Home() {
               icon="linkedin-alt"
               descriptionText={<>Message me on<br />LinkedIn</>}
               buttonText="Open LinkedIn"
-              href="https://www.linkedin.com/in/wojtek-kulak/"
+              href="https://www.linkedin.com/in/wojtek-kulak-6804b0235/"
             />
           </div>
         </section>

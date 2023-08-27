@@ -1,3 +1,6 @@
+@import '@/styles/base';
+
+// Contact card component
 .contactCard {
   display: flex;
   flex-direction: column;
@@ -5,8 +8,8 @@
   gap: 0.7rem;
   width: 10rem; // fixed width
   padding: 1rem;
-  background: var(--bg-color-2);
-  border: 1px solid var(--border-color-2);
+  background: $bg-color-1;
+  border: 1px solid $border-color-1;
   border-radius: 1rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   opacity: 0.9;
@@ -17,7 +20,7 @@
 
   svg {
     height: 3rem;
-    color: var(--text-color-1);
+    color: $text-color-1;
     fill: aqua;
   }
 
@@ -25,7 +28,7 @@
     margin: 0;
     font-size: 0.9rem;
     font-weight: 300;
-    color: var(--text-color-3);
+    color: $text-color-3;
     text-align: center;
   }
 
