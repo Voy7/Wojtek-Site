@@ -34,7 +34,7 @@ export default function Project({
   isSwapped = false
 }: Props) {
   const control = useAnimation()
-const [ref, inView] = useInView()
+const [ref, inView] = useInView({ threshold: 0.3 })
 
 useEffect(() => {
   if (inView) control.start("visible")

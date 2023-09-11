@@ -105,7 +105,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  // min-height: 100vh;
+  min-height: 80vh;
   padding: 2rem 2rem 4rem 2rem;
 
   p {
@@ -121,5 +121,30 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
+  }
+}
+
+// Footer section
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  color: $text-color-1;
+  background: $bg-color-1;
+  border-top: 1px solid $border-color-1;
+
+  a {
+    color: rgb(95, 95, 255);
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 1rem;
+    fill: white;
   }
 }

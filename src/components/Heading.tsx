@@ -11,7 +11,7 @@ type Props = {
 
 // Heading text component
 export default function Heading({ children, ...props }: Props) {
-  const [ref, inView] = useInView()
+  const [ref, inView] = useInView({ threshold: 0.5 })
 
   return (
     <h2
