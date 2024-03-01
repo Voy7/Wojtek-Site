@@ -3,43 +3,52 @@
 // Contact card component
 .contactCard {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.7rem;
-  width: 10rem; // fixed width
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 500px;
   padding: 1rem;
   background: $bg-color-1;
   border: 1px solid $border-color-1;
   border-radius: 1rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-  opacity: 0.9;
-  scale: 0.9;
-  transition: 300ms ease-in-out;
 
-  &:hover { opacity: 1; scale: 1; }
-
-  svg {
-    height: 3rem;
+  .icon {
+    padding: 0.5rem;
+    font-size: 3rem;
     color: $text-color-1;
-    fill: aqua;
+    fill: $text-color-1;
+    border-radius: 50%;
+    background: linear-gradient(90deg,
+      rgba(255, 95, 95, 1) 0%,
+      rgba(255, 95, 175, 1) 20%,
+      rgba(95, 95, 255, 1) 40%,
+      rgba(95, 175, 255, 1) 60%,
+      rgba(95, 255, 175, 1) 80%,
+      rgba(175, 255, 95, 1) 100%
+    );
   }
 
-  p {
-    margin: 0;
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: $text-color-3;
-    text-align: center;
-  }
+  .text {
+    flex: 1;
 
-  a {
-    padding: .5em 1em;
-    font-size: 1rem;
-    text-decoration: none;
-    color: rgb(96, 96, 255);
-    border-radius: 1em;
-    transition: 150ms ease-in-out;
+    h2 { font-size: 1.3rem; cursor: default; }
 
-    &:hover { background: rgba(127, 127, 255, 0.25); }
+    p {
+      margin: 1rem 0 1.5rem 0;
+      text-align: left;
+    }
+
+    a {
+      padding: 0.5rem;
+      text-decoration: none;
+      font-size: 1.15rem;
+      color: $text-color-1;
+      background: rgb(95, 95, 255);
+      border: none;
+      border-radius: 0.5rem;
+      transition: 300ms ease-in-out;
+
+      &:hover { background: rgb(75, 75, 255); }
+    }
   }
 }

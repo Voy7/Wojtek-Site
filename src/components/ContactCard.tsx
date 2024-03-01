@@ -3,7 +3,8 @@ import styles from '@/components/ContactCard.module.scss'
 
 type Props = {
   icon: IconNames,
-  descriptionText: React.ReactNode,
+  title: string,
+  description: string,
   buttonText: string,
   href: string
 }
@@ -11,15 +12,21 @@ type Props = {
 // Contact card component
 export default function ContactCard({
   icon,
-  descriptionText,
+  title,
+  description,
   buttonText,
   href
 }: Props) {
   return (
     <div className={styles.contactCard}>
-      <Icon name={icon} />
-      <p>{descriptionText}</p>
-      <a href={href}>{buttonText}</a>
+      <Icon name={icon} className={styles.icon} />
+      <div className={styles.text}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <a href={href}>
+          {buttonText} <Icon name="visit" />
+        </a>
+      </div>
     </div>
   )
 }

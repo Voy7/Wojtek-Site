@@ -31,7 +31,18 @@
         align-items: center;
         gap: 1rem;
 
-        h2 { margin: 0; font-size: 1.5rem; color: $text-color-1; }
+        h2 {
+          font-size: 1.5rem;
+          color: $text-color-1;
+          cursor: not-allowed;
+
+          a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            &:hover { text-decoration: underline; color: rgb(127, 127, 255); }
+          }
+        }
         
         .links {
           display: flex;
@@ -44,9 +55,14 @@
 
             &:hover { color: $text-color-1; fill: $text-color-1; }
 
-            svg { height: 1rem; }
+            svg { font-size: 1rem; }
           }
         }
+      }
+
+      p {
+        margin: 0.5rem 0;
+        color: $text-color-2;
       }
     }
   }
@@ -73,7 +89,6 @@
   width: 300px;
   height: 150px; // Needed or else breaks on vertical view
   position: relative;
-  // background: red;
 
   img {
     position: absolute;
@@ -85,10 +100,9 @@
     border-radius: 0.5rem;
     opacity: 0;
     transition: 300ms ease-in-out;
+    cursor: pointer;
 
-    &.show {
-      opacity: 1;
-    }
+    &.show { opacity: 1; }
   }
 }
 

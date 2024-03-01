@@ -3,6 +3,7 @@ import Navbar from '@/components/navbar/Navbar'
 import SidebarSocials from '@/components/SidebarSocials'
 import Canvas from '@/components/3DCanvas'
 import Heading from '@/components/Heading'
+import AboutSection from '@/components/AboutSection'
 import Project from '@/components/project/Project'
 import ItemsList from '@/components/ItemsList'
 import IconText from '@/components/IconText'
@@ -17,16 +18,7 @@ export default function Home() {
       <SidebarSocials />
       <Canvas />
       <main>
-        <section id="about" className={styles.about}>
-          <div className={styles.left}>
-            <Image src="/profile.png" alt="profile" width={100} height={100} />
-            <h1>Wojtek Kulak</h1>
-            <Heading>FULL-STACK DEVELOPER</Heading>
-          </div>
-          <p className={styles.bio}>
-            Passionate for both <span>front-end & back-end</span> web development. I love to learn new technologies and create the best possible user experience for all my <span>websites & web apps</span>.
-          </p>
-        </section>
+        <AboutSection />
         <section id="projects" className={styles.projects}>
           <Heading id="projects">MY PROJECTS</Heading>
           <Project
@@ -107,21 +99,25 @@ export default function Home() {
           <div className={styles.cards}>
             <ContactCard
               icon="mail"
-              descriptionText={<>Email me:<br />wkulak3@gmail.com</>}
+              title="Email"
+              description="Email me at: wkulak3@gmail.com"
               buttonText="Send Email"
               href="mailto:wkulak3@gmail.com"
             />
             <ContactCard
               icon="linkedin-alt"
-              descriptionText={<>Message me on<br />LinkedIn</>}
+              title="LinkedIn"
+              description="Connect with me on LinkedIn!"
               buttonText="Open LinkedIn"
               href="https://www.linkedin.com/in/wojtek-kulak-6804b0235/"
             />
           </div>
         </section>
         <footer className={styles.footer}>
-          Also, this website is&nbsp;<u>not</u>&nbsp;a template,&nbsp;
-          <a href="https://github.com/Voy7/Wojtek-Site" target="_blank" rel="noopener noreferrer">check out the source code</a>!
+          <p>
+            Also, this website is&nbsp;<u>not</u>&nbsp;a template,&nbsp;
+            <a href="https://github.com/Voy7/Wojtek-Site" target="_blank" rel="noopener noreferrer">check out the source code</a>!
+          </p>
           <Icon name="github" />
         </footer>
       </main>

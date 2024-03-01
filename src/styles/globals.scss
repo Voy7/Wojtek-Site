@@ -2,8 +2,6 @@
 @import '@/styles/tooltips';
 
 body {
-  margin: 0;
-  padding: 0;
   color: $text-color-1;
   background: $bg-color-1;
   background: linear-gradient(90deg,
@@ -11,6 +9,12 @@ body {
     rgba(35, 35, 55, 1) 50%,
     rgba(25, 25, 35, 1) 100%
   );
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
 }
 
 main {

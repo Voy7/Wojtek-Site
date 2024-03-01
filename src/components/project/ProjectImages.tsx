@@ -4,12 +4,12 @@ import { useRef, useEffect } from 'react'
 import styles from '@/components/project/Project.module.scss'
 
 type Props = {
-  // images: React.ReactNode[]
-  images: string[]
+  images: string[],
+  showImageViewer: () => void
 }
 
 // Project images gallery component
-export default function ProjectImages({ images }: Props) {
+export default function ProjectImages({ images, showImageViewer }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -38,9 +38,9 @@ export default function ProjectImages({ images }: Props) {
 
   return (
     <div ref={containerRef} className={styles.projectImages}>
-      { images.map((image, index) => {
-        return <img key={index} src={`/projects/${image}`} alt="Project image" />
-      })}
+      { images.map((image, index) => (
+        <img key={index} src={`/projects/${image}`} alt="Project image" onClick={showImageViewer} />
+      ))}
     </div>
   )
 }

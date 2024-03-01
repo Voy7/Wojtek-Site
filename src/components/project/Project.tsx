@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import ProjectTags, { ProjectTagNames } from '@/components/project/ProjectTags'
 import ProjectImages from '@/components/project/ProjectImages'
 import ProjectLine, { ProjectLinePos } from '@/components/project/ProjectLine'
+import ImagesViewer from '@/components/ImagesViewer'
 import Icon from '@/components/Icon'
 import styles from '@/components/project/Project.module.scss'
 
@@ -34,12 +35,15 @@ export default function Project({
   isSwapped = false
 }: Props) {
   const control = useAnimation()
-const [ref, inView] = useInView({ threshold: 0.3 })
+  
+  const [ref, inView] = useInView({ threshold: 0.3 })
 
-useEffect(() => {
-  if (inView) control.start("visible")
-  else control.start("hidden")
-}, [control, inView])
+  const [showImageViewer, setShowImageViewer] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (inView) control.start("visible")
+    else control.start("hidden")
+  }, [control, inView])
 
   return (
     <div className={styles.project}>
@@ -56,7 +60,11 @@ useEffect(() => {
       >
         <div className={styles.left}>
           <header>
-            <h2>{name}</h2>
+            { visitURL ? (
+              <h2><a href={visitURL} target="_blank" rel="noopener noreferrer">{name}</a></h2>
+            ) : (
+              <h2 title="Visit URL is currently private.">{name}</h2>
+            )}
             <div className={styles.links}>
               { githubURL && (
                 <a href={githubURL} target="_blank" rel="noopener noreferrer" data-tooltip="View Repository">
@@ -73,9 +81,10 @@ useEffect(() => {
           <p>{description}</p>
           <ProjectTags tags={tags} />
         </div>
-        <ProjectImages images={images} />
+        <ProjectImages images={images} showImageViewer={() => setShowImageViewer(true)} />
       </motion.div>
       <ProjectLine linePos={linePos} lineContent={lineContent} />
+      <ImagesViewer isOpen={showImageViewer} setClose={() => setShowImageViewer(false)} images={images} />
     </div>
   )
 }
