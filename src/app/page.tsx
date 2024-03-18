@@ -24,7 +24,7 @@ export default function Home() {
           <Project
             name="codcsclub.com"
             description="codcsclub.com is the official website for the College of Dupage Computer Science Club. It provides an introduction about the club to new members and partners. The site also provides a place to catalog all of our projects and contributing team members."
-            tags={['React', 'JavaScript', 'HTML', 'Sass', 'Next.js', 'Node.js']}
+            tags={['React', 'JavaScript', 'Sass', 'Next.js', 'Node.js']}
             images={['codcsclub-1.png', 'codcsclub-2.png', 'codcsclub-3.png', 'codcsclub-4.png']}
             linePos="down" lineContent="1"
             githubURL="https://github.com/cod-cs-club/codcsclub"
@@ -51,9 +51,29 @@ export default function Home() {
           <Project
             name="N.D.Q.E"
             description="A browser extension + website that allows you to find the correct answer in practice/open-note quizes. This saves you time by displaying answers directly on the page without having to copy and paste."
-            tags={['React', 'TypeScript', 'HTML', 'Sass', 'Next.js', 'Node.js']}
-            images={['ndqe-1.png', 'ndqe-2.png', 'ndqe-3.png']}
-            linePos="up" lineContent="4"
+            tags={['React', 'TypeScript', 'Sass', 'Next.js', 'Node.js']}
+            images={['ndqe-1.png', 'ndqe-2.png', 'ndqe-3.png', 'ndqe-4.png']}
+            linePos="up-down" lineContent="4"
+            visitURL="https://ndqe.app"
+            isSwapped
+          />
+          <Project
+            name="ChapGPT"
+            description="A custom chat bot app that can answer any question about College of Dupage. Uses custom training data, custom internal tools, and Google Gemini AI model."
+            tags={['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Python']}
+            images={['chapgpt-1.png', 'chapgpt-2.png', 'chapgpt-3.png']}
+            linePos="up-down" lineContent="5"
+            visitURL="https://codai.chat"
+            githubURL="https://github.com/cod-cs-club/AI-Chat-Bot"
+          />
+          <Project
+            name="Wheaton Auto"
+            description="A simple, but astetically pleasing website for local business Wheaton Auto Repair. Also includes fullly featured admin content management system."
+            tags={['React', 'TypeScript', 'Sass', 'Next.js']}
+            images={['wheaton-1.png', 'wheaton-2.png', 'wheaton-3.png']}
+            linePos="up" lineContent="6"
+            visitURL="https://wheaton-auto.vercel.app/"
+            githubURL="https://github.com/Voy7/Wheaton-Auto"
             isSwapped
           />
         </section>
@@ -78,6 +98,7 @@ export default function Home() {
                 <IconText tag="Next.js" />
                 <IconText tag="Express.js" />
                 <IconText tag="Sass" />
+                <IconText tag="Tailwind CSS" />
                 <IconText tag="EJS" />
                 <IconText tag="Prisma" />
               </div>

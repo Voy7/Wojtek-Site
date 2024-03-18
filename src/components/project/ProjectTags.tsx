@@ -8,6 +8,7 @@ export const projectTags  = [
   { name: 'HTML', image: 'html.png' },
   { name: 'CSS', image: 'css.png' },
   { name: 'Sass', image: 'sass.png' },
+  { name: 'Tailwind CSS', image: 'tailwind.png' },
   { name: 'EJS', image: 'ejs.png' },
   { name: 'Next.js', image: 'nextjs.png' },
   { name: 'Node.js', image: 'node.png' },
