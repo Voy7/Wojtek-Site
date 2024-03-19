@@ -17,7 +17,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <meta property="og:image" content="http://wojtekkulak.com/thumbnail.png" />
+        <meta name="theme-color" content="#5496ff" />
+      </head>
       <body className={mainFont.className}>
         {children}
       </body>
